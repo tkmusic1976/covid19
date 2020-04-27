@@ -195,7 +195,9 @@ const init = () => {
               let total = 0;
               data.datasets.forEach(function(ds, i){
                 ret.push(ds.label + ": " + addCommas(ds.data[tooltipItem.index]) + " " + LABELS[LANG].unit[code]);
-                total += ds.data[tooltipItem.index];
+                if (ds.label !== LABELS[LANG].movingAverage) {
+                  total += ds.data[tooltipItem.index];
+                }
               });
               if (data.datasets.length >= 2) {
                 ret.push(LABELS[LANG].total + ": " + addCommas(total) + " " + LABELS[LANG].unit[code]);
