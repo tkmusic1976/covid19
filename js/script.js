@@ -296,7 +296,11 @@ const init = () => {
           value = value / days;
         }
 
-        dataset.data.push(value);
+        let rounded = null;
+        if (value !== null) {
+          rounded = Math.round(value * 10) / 10;
+        }
+        dataset.data.push(rounded);
       }
 
       config.data.datasets.unshift(dataset);
