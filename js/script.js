@@ -36,6 +36,7 @@ const LABELS = {
       pcrtested: ["PCR検査人数"],
       serious: ["重症者数"]
     },
+    movingAverage: "7日移動平均",
     unit: {
       carriers: "名",
       cases: "名",
@@ -73,6 +74,7 @@ const LABELS = {
       pcrtested: ["PCR Tested"],
       serious: ["Serious"]
     },
+    movingAverage: "7days Moving Average",
     unit: {
       carriers: "",
       cases: "",
@@ -780,7 +782,6 @@ const init = () => {
       return false;
     });
   }
-
   loadData();
   bindEvents();
 };
